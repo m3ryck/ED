@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<vector>
-#include<cstdio>
-#include <String>
-#include <cstddef>
 #include <iostream>
 
 using namespace std;
@@ -30,7 +27,7 @@ int Q[y];
     }
 
 
-for(i=0;i<x;i++){
+for(i=0;i<x;i++){           //percorrendo o array e comparando cada elemento
     for(j=0;j<y;j++){
         aux=i;
         if(S[i]==Q[j]){
