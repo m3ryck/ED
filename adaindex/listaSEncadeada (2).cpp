@@ -74,18 +74,25 @@ void inserePrefix(Prefix *PREFIX)
 	}
 }
 int BuscaElemento(const Prefix *prefix, Lista *lista){
-        int i,j;
-        j = 0;
+        int i,j=0,k=0,z,aux=0;
+
         while (prefix->prox1!= NULL){
-       prefix = prefix->prox1;
-       j++;
-    }
+            prefix = prefix->prox1;
+            j++;
+        }
+        while (lista->prox!= NULL){
+            lista = lista->prox;
+            k++;
+        }
 
     for(i = 0; i < j; ++i){
-        if (prefix->queries[i] == lista->TODO[i]){
-            printf("achei: %s", prefix->queries);
+        for(z=0;z<k;z++){
+            if (prefix->queries[i] == lista->TODO[z]){
+                aux++;
+            }
         }
     }
+    printf("aux::::%d", aux);
 }
 
 
