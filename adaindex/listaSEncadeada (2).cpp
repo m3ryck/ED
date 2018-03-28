@@ -73,12 +73,21 @@ void inserePrefix(Prefix *PREFIX)
 		tmp->prox1 = prefix;
 	}
 }
-int BuscaElemento(const tLista *lista, tElemento elemento){
-    for(int i = 0; i < lista->nElementos; ++i){
-        if (lista->elementos[i] == elemento){
-            return i;/* Elemento foi encontrado */      }
+int BuscaElemento(const Prefix *prefix, Lista *lista){
+        int i,j;
+        j = 0;
+        while (prefix->prox1!= NULL){
+       prefix = prefix->prox1;
+       j++;
     }
-    return -1; /* Elemento não foi encontrado */}
+
+    for(i = 0; i < j; ++i){
+        if (prefix->queries[i] == lista->TODO[i]){
+            printf("achei: %s", prefix->queries);
+        }
+    }
+}
+
 
 int main(){
 
@@ -100,6 +109,7 @@ Prefix *queries = (Prefix *) malloc(sizeof(Prefix));
 
     }
 
+    BuscaElemento(queries,TODO);
     /*
     Lista *tmp;
 	tmp = TODO->prox;
@@ -116,7 +126,7 @@ Prefix *queries = (Prefix *) malloc(sizeof(Prefix));
 		printf("%s\n", tmp1->queries);
 		tmp1 = tmp1->prox1;
 	}
-*/
+
 
 Lista *tmp;
 tmp= TODO->prox;
@@ -134,7 +144,7 @@ tmp1=queries->prox1;
     tmp1=tmp1->prox1;
 
     }
-
+*/
 }
 
 
